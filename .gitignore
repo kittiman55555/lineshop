@@ -3,3 +3,6 @@ venv
 *.pyc
 staticfiles
 .env
+static
+store\media\static
+store/media/static

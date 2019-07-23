@@ -25,7 +25,7 @@ SECRET_KEY = '_w(ctp$ndu2)spbwp&%o+)z$o+m3s8ct*(r5nq+!pq^8*9qw$k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'shopline.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'shoplines.herokuapp.com']
 
 # Application definition
 
@@ -121,7 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static' )
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "media/static")
+]
 
 #mefia folder setting
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
