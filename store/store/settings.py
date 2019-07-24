@@ -25,7 +25,7 @@ SECRET_KEY = '_w(ctp$ndu2)spbwp&%o+)z$o+m3s8ct*(r5nq+!pq^8*9qw$k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['lineshops.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'lineshops.herokuapp.com']
 
 # Application definition
 
