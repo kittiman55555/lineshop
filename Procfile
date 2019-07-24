@@ -1,2 +1,1 @@
-web: gunicorn store.wsgi
-
+web: gunicorn lineshops.config.settings.wsgi
