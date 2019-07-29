@@ -19,7 +19,6 @@ class CustomerList(generics.ListCreateAPIView):
         queryset = Customer.objects.all()
         name = self.request.query_params.get('line_id', None)
         if name is not None:
-            queryset = queryset.filter(line_id=name)
-        
+            queryset = queryset.filter(line_id=name) 
         return queryset
       
