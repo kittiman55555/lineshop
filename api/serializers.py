@@ -1,8 +1,10 @@
 from rest_framework import serializers
-from customer.models import Customer
 from rest_framework.response import Response
 from django.http import JsonResponse
 
+
+from customer.models import Customer
+from product.models import Product
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,4 +20,8 @@ class CustomerSerializer(serializers.ModelSerializer):
         return customer_line
 
 
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'
 
