@@ -30,7 +30,15 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    categories = CategorySerializer()
+    categories = CategorySerializer(many=True)
     class Meta:
         model = Product
-        fields = ('id','name','price','code','description','qty','photo_main','is_published','categories')
+        fields =  '__all__'
+
+    # def get_queryset(self):
+    #     queryset = Product.objects.all()
+    #     cat_id = self.request.query_params.get('cat', None)
+    #     print(cat_id)
+    #     if cat_id is not None:
+    #         queryset = queryset.filter(categories_id=cat_id)
+    #     return queryset

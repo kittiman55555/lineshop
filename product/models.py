@@ -17,7 +17,7 @@ class Product(models.Model):
     photo_4 = models.ImageField(upload_to='product/%Y/%m/%d/', blank=True)
     photo_5 = models.ImageField(upload_to='product/%Y/%m/%d/', blank=True)
     photo_6 = models.ImageField(upload_to='product/%Y/%m/%d/', blank=True)
-    categories = models.ForeignKey(Category, on_delete=models.CASCADE)
+    categories = models.ManyToManyField(Category)
     is_published = models.BooleanField(default=True)
 
 

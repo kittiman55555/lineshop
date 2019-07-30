@@ -31,6 +31,18 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+
+    def get_queryset(self):
+        queryset = Product.objects.all()
+        cat_id = self.request.query_params.get('cat', None)
+        print(cat_id)
+        if cat_id is not None:
+            #Article.objects.filter(categories__in = preference.categories.all())
+            queryset = queryset.filter(categories__id=cat_id)
+        return queryset
+
+
+
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
