@@ -13,6 +13,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 router = routers.DefaultRouter()
 router.register('customer', views.CustomerViewSet)
 router.register('product', views.ProductViewSet)
+router.register('categories', views.CategoryViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

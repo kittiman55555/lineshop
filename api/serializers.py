@@ -5,6 +5,9 @@ from django.http import JsonResponse
 
 from customer.models import Customer
 from product.models import Product
+from categories.models import Category 
+
+
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,8 +23,15 @@ class CustomerSerializer(serializers.ModelSerializer):
         return customer_line
 
 
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+
 class ProductSerializer(serializers.ModelSerializer):
+    categories = CategorySerializer()
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ('id','name','price','code','description','qty','photo_main','is_published','categories')
 
