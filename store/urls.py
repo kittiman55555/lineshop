@@ -23,7 +23,7 @@ router.register('categories', views.CategoryViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'api/v1/', include(router.urls)),
-    url(r'^', schema_view),
+    url(r'^api/document', schema_view),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
