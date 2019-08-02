@@ -155,3 +155,4 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 
+del DATABASES['default']['OPTIONS']['sslmode']
