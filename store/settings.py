@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -92,19 +93,30 @@ WSGI_APPLICATION = 'store.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'd3vrpusptlmsbg',
-    'USER': 'ehvaonciwgxotl',
-    'PASSWORD': '21071b43ee312a908e74ece41a19d6564969ed4d27832c23185d1b8c3cb31867',
-    'HOST': 'ec2-174-129-227-51.compute-1.amazonaws.com',
-    'PORT': '5432'
-    }
-}
+# DATABASES = {
+#     'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': 'd3vrpusptlmsbg',
+#     'USER': 'ehvaonciwgxotl',
+#     'PASSWORD': '21071b43ee312a908e74ece41a19d6564969ed4d27832c23185d1b8c3cb31867',
+#     'HOST': 'ec2-174-129-227-51.compute-1.amazonaws.com',
+#     'PORT': '5432'
+#     }
+# }
 
+# DATABASES = {
+#     'default': {
+#     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#     'NAME': 'd3vrpusptlmsbg',
+#     'USER': 'ehvaonciwgxotl',
+#     'PASSWORD': '',
+#     'HOST': 'localhost',
+#     'PORT': '',
+#     }
+# }
 
-
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -145,3 +157,4 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 
+del DATABASES['default']['OPTIONS']['sslmode']
