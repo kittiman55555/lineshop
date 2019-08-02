@@ -104,19 +104,17 @@ WSGI_APPLICATION = 'store.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#     'NAME': 'd3vrpusptlmsbg',
-#     'USER': 'ehvaonciwgxotl',
-#     'PASSWORD': '',
-#     'HOST': 'localhost',
-#     'PORT': '',
-#     }
-# }
+DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lineshop',
+        'USER': 'postgres',
+        'PASSWORD': 'ubcdins5',
+        'HOST': 'localhost',
+    }
+}
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -157,4 +155,3 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 
-del DATABASES['default']['OPTIONS']['sslmode']
