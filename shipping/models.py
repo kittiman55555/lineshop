@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-('''
+"""
 class Shipping(models.Model):
     condition_name = models.CharField( max_length=50)
     country_code = models.IntegerField()
@@ -11,4 +11,4 @@ class Shipping(models.Model):
     provinces_code = models.IntegerField()
     def __str__(self):
         return self.increment_id
-''')
+"""
