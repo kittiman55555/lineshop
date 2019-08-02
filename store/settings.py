@@ -96,10 +96,10 @@ WSGI_APPLICATION = 'store.wsgi.application'
 DATABASES = {
         'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lineshop',
-        'USER': 'postgres',
-        'PASSWORD': 'ubcdins5',
-        'HOST': 'localhost',
+        'NAME': 'd29ofjerekadm5',
+        'USER': 'syfkitdsfpcuss',
+        'PASSWORD': '88f73b2c90009144f0e906d1cad1e48c52237a57196bf217f0ba545861554446',
+        'HOST': 'ec2-50-16-197-244.compute-1.amazonaws.com',
     }
 }
 
