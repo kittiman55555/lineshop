@@ -86,12 +86,23 @@ WSGI_APPLICATION = 'store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'storelines.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'storelines.sqlite3'),
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'lineshop',
+    'USER': 'postgres',
+    'PASSWORD': 'ubcdins5',
+    'HOST': 'localhost',
     }
 }
+
 
 
 # Password validation
