@@ -4,8 +4,7 @@ from django.http import JsonResponse
 from customer.models import Customer
 from product.models import Product
 from categories.models import Category 
-
-
+from orders.models import Order
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -33,10 +32,17 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields =  '__all__'
 
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = '__all__'
+
+        print('999')
+
     # def get_queryset(self):
     #     queryset = Product.objects.all()
     #     cat_id = self.request.query_params.get('cat', None)
     #     print(cat_id)
     #     if cat_id is not None:
-    #         queryset = queryset.filter(categories_id=cat_id)
+    #     queryset = queryset.filter(categories_id=cat_id)
     #     return queryset

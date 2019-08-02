@@ -15,7 +15,6 @@ class Customer(models.Model):
     provice = models.CharField(max_length=50,blank=True)
     country = models.CharField(max_length=50,default='Thailand')
     zipcode = models.CharField(max_length=10,blank=True)
-    phone = models.IntegerField(default=None,blank=True)
     email = models.CharField( max_length=50,blank=True)
     store_id = models.IntegerField(default=0,blank=True)
 

@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from api.serializers import CustomerSerializer, ProductSerializer, CategorySerializer
+from api.serializers import CustomerSerializer, ProductSerializer, CategorySerializer, OrderSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -8,6 +8,7 @@ from rest_framework import generics
 from product.models import Product
 from customer.models import Customer
 from categories.models import Category
+from orders.models import Order
 
 # class CustomerList(generics.ListCreateAPIView):
 #     queryset = Product.objects.all()
@@ -45,3 +46,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+class OrderViewSet(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
