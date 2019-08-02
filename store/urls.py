@@ -9,10 +9,8 @@ from . import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-
 #api document
 schema_view = get_swagger_view(title='LineStore API')
-
 
 router = routers.DefaultRouter()
 router.register('customer', views.CustomerViewSet)

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework_swagger',
-    'rest_framework','customer','product','categories',
+    'rest_framework','customer','product','categories','orders',
 ]
 
 REST_FRAMEWORK = {
