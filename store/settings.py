@@ -59,7 +59,6 @@ MIDDLEWARE = [
    
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 ROOT_URLCONF = 'store.urls'
@@ -93,18 +92,32 @@ WSGI_APPLICATION = 'store.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#         'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd29ofjerekadm5',
+#         'USER': 'syfkitdsfpcuss',
+#         'PASSWORD': '88f73b2c90009144f0e906d1cad1e48c52237a57196bf217f0ba545861554446',
+#         'HOST': 'ec2-50-16-197-244.compute-1.amazonaws.com',
+#     }
+# }
+
+
 DATABASES = {
-        'default': {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd29ofjerekadm5',
-        'USER': 'syfkitdsfpcuss',
-        'PASSWORD': '88f73b2c90009144f0e906d1cad1e48c52237a57196bf217f0ba545861554446',
+        'NAME': os.environ.get('DB_NAME', 'd29ofjerekadm5'),
+        'USER': os.environ.get('DB_USER', 'syfkitdsfpcuss'),
+        'PASSWORD': os.environ.get('DB_PASS', '88f73b2c90009144f0e906d1cad1e48c52237a57196bf217f0ba545861554446'),
         'HOST': 'ec2-50-16-197-244.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
+
+
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
+db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
 
@@ -159,5 +172,6 @@ USE_TZ = True
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #del DATABASES['default']['OPTIONS']['sslmode']
