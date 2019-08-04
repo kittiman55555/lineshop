@@ -28,7 +28,8 @@ SECRET_KEY = '_w(ctp$ndu2)spbwp&%o+)z$o+m3s8ct*(r5nq+!pq^8*9qw$k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'lineshops.herokuapp.com']
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'lineshops.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', '.herokuapp.com', '.ngrok.io']
 
 # Application definition
 
@@ -43,9 +44,7 @@ INSTALLED_APPS = [
     'rest_framework','customer','product','categories','orders',
 ]
 
-REST_FRAMEWORK = {
-  'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
-}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
